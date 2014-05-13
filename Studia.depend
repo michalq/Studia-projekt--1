@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1399401682 source:/home/michal/Programowanie/Studia/main.cpp
+	<iostream>
+	"Pracownik.h"
+
+1399401443 /home/michal/Programowanie/Studia/include/Pracownik.h
+	"Data.h"
+	<iostream>
+	<string.h>
+
+1399401365 /home/michal/Programowanie/Studia/include/Data.h
+	<iostream>
+
+1399401718 source:/home/michal/Programowanie/Studia/src/Data.cpp
+	"Data.h"
+
+1399545445 source:/home/michal/Programowanie/Studia/src/Pracownik.cpp
+	"Pracownik.h"
+
