@@ -18,7 +18,7 @@ public:
 	bool SprawdzImie(const char* por_imie) const;
 	bool SprawdzNazwisko(const char* por_nazwisko) const;
 private:
-	char pszImie[25];
-	char pszNazwisko[30];
+	char *pszImie;
+	char *pszNazwisko;
 	Data dataUrodzenia;
 };

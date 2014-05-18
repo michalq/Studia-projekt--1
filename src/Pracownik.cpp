@@ -19,11 +19,19 @@ const char* Pracownik::Nazwisko() const
 
 void Pracownik::Imie(const char* imie)
 {
+    if (this->pszImie != NULL)
+    {
+        delete[] this->pszImie;
+        this->pszImie = NULL;
+    }
+    this->pszImie = new char [strlen(imie)];
 	strcpy(this->pszImie, imie);
 }
 
 void Pracownik::Nazwisko(const char* nazwisko)
 {
+    //delete this->pszNazwisko;
+    this->pszNazwisko = new char [strlen(nazwisko)];
 	strcpy(this->pszNazwisko, nazwisko);
 }
 

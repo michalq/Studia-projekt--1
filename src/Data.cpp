@@ -28,6 +28,7 @@ void Data::Ustaw(int d, int m, int r)
 	this->dzien = d;
 	this->miesiac = m;
 	this->rok = r;
+	this->Koryguj();
 }
 
 void Data::Wypisz() const
@@ -42,17 +43,26 @@ void Data::Wypisz() const
 void Data::Wpisz()
 {
 	int d, m, r;
-	do
-	{
-		std::cin >> d >> m >> r;
-	}while(!(d <= 31 && d > 0 && m <=12 && m > 0));
-
+	std::cin >> d >> m >> r;
 	this->Ustaw(d,m,r);
 }
 
 void Data::Koryguj()
 {
+    if (this->dzien > 31)
+        this->dzien = 31;
+    else if (this->dzien < 1)
+        this->dzien = 1;
 
+    if (this->miesiac > 12)
+        this->miesiac = 12;
+    else if (this->miesiac < 1)
+        this->miesiac = 1;
+
+    if (this->rok > 2014)
+        this->rok = 2014;
+    else if (this->rok < 1900)
+        this->rok = 1900;
 }
 
 int Data::Porownaj(const Data& wzor)
