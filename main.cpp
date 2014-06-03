@@ -1,6 +1,7 @@
 #include<iostream>
-
 #include "Pracownik.h"
+
+int Pracownik::siLiczPrac = 0;
 
 int main()
 {
@@ -29,6 +30,11 @@ int main()
 		std::cout << "\nNazwiska sa takie same.";
 	else
 		std::cout << "\nNazwiska sa rozne.";
+
+    std::cout << "\n\nUtworzonych pracownikow: " << Pracownik::siLiczPrac << "\n\n";
+
+    jan.~Pracownik();
+    unknown.~Pracownik();
 
 	return 0;
 }

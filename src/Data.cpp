@@ -1,6 +1,6 @@
 #include "Data.h"
 
-Data::Data(void)
+Data::Data(void) : dzien(1), miesiac(1), rok(1970)
 {
 }
 

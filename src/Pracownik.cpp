@@ -1,10 +1,18 @@
 #include "Pracownik.h"
 
-Pracownik::Pracownik(void)
+Pracownik::Pracownik(char* imie = "brak", char* nazwisko = "brak", int dzien = 1, int miesiac = 1, int rok = 1970)
+: pszImie(imie), pszNazwisko(nazwisko), dataUrodzenia(Data())
 {
-	this->Imie("brak");
-	this->Nazwisko("brak");
-	this->DataUrodzenia(1, 1, 1970);
+
+}
+
+Pracownik::~Pracownik()
+{
+	delete [] pszImie;
+	delete [] pszNazwisko;
+	delete [] ulica;
+	delete [] nrDomu;
+	delete [] miasto;
 }
 
 const char* Pracownik::Imie() const
@@ -17,11 +25,31 @@ const char* Pracownik::Nazwisko() const
 	return this->pszNazwisko;
 }
 
+const char* Pracownik::NrDomu() const
+{
+	return this->nrDomu;
+}
+
+const char* Pracownik::Miasto() const
+{
+	return this->miasto;
+}
+
+const char* Pracownik::Ulica() const
+{
+	return this->ulica;
+}
+
+const Data Pracownik::DataUrodzenia const()
+{
+	return this->dataUrodzenia;
+}
+
 void Pracownik::Imie(const char* imie)
 {
     if (this->pszImie != NULL)
     {
-        delete[] this->pszImie;
+        //delete[] this->pszImie;
         this->pszImie = NULL;
     }
     this->pszImie = new char [strlen(imie)];
@@ -38,6 +66,24 @@ void Pracownik::Nazwisko(const char* nazwisko)
 void Pracownik::DataUrodzenia(int d, int m, int r)
 {
 	this->dataUrodzenia.Ustaw(d, m, r);
+}
+
+void NrDomu(const char* nrDomu)
+{
+	this->nrDomu = new char [strlen(nrDomu)];
+	strcpy(this->nrDomu, nrDomu);
+}
+
+void Ulica(const char* ulica)
+{
+	this->ulica = new char [strlen(ulica)];
+	strcpy(this->ulica, ulica);
+}
+
+void Miasto(const char* miasto)
+{
+	this->miasto = new char [strlen(miasto)];
+	strcpy(this->miasto, miasto);
 }
 
 void Pracownik::Wypisz() const
