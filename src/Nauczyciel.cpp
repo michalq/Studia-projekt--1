@@ -1,13 +1,13 @@
 #include "Nauczyciel.h"
 
-Nauczyciel::Nauczyciel(char* imie = "brak", char* nazwisko = "brak", int dzien = 1, int miesiac = 1, int rok = 1970, char* przedmiot = "brak", double staz = 0)
-: Pracownik(imie, nazwisko, dzien, miesiac, rok), przedmiot(przermiot), staz(staz)
+Nauczyciel::Nauczyciel(char* imie, char* nazwisko, int dzien, int miesiac, int rok, char* przedmiot, double staz)
+: Pracownik(imie, nazwisko, dzien, miesiac, rok), przedmiot(przedmiot), staz(staz)
 {
 
 }
 
 
-virtual Nauczyciel::~Nauczyciel(void)
+Nauczyciel::~Nauczyciel(void)
 {
 	delete [] przedmiot;
 }
@@ -33,11 +33,13 @@ double Nauczyciel::Staz() const
 	return this->staz;
 }
 
-void Nauczycie::Wizytowka()
+void Nauczyciel::Wizytowka()
 {
-	std::cout	<< "Zawod: nauczyciel\n" <<
+	std::cout	<< "Zawod: nauczyciel\n"
 				<< "Imie i nazwisko:" << this->Imie() << " " << this->Nazwisko() << "\n"
-				<< "Data urodzenia: " << this->DataUrodzenia().Wypisz() << "\n"
+				<< "Data urodzenia: ";
+    this->DataUrodzenia().Wypisz();
+    std::cout	<< "\n"
 				<< "Dane dodatkowe: \n"
 				<< "\tPrzedmiot: " << this->Przedmiot() << "\n"
 				<< "\tStaz: " << this->Staz();

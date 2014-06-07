@@ -1,23 +1,22 @@
-#ifndef SZKOLA_H
-#define SZKOLA_H
+#pragma once
+
+#include "Nauczyciel.h"
 
 class Szkola
 {
     public:
         Szkola(char*);
         virtual ~Szkola();
-        int DodajNauczyciela(const Nauczyciel &);
+        int DodajNauczyciela(Nauczyciel *);
         void UsunNauczyciela(int n);
         int Znajdz(const char *);
-        void Wyswielt(int n);
+        void Wyswietl(int n);
         void Lista();
         char* NazwaSzkoly();
 
 
     private:
-        Nuczyciel nauczyciele[20];
+        Nauczyciel *nauczyciele[20];
         int ile; // licznik obiektów klasy nauczyciel
         char* nazwa_szkoly;
 };
-
-#endif // SZKOLA_H

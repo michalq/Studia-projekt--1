@@ -7,22 +7,16 @@
 class Pracownik
 {
 public:
-	Pracownik(char*, char*, int, int, int);
+	Pracownik(char* imie = "brak", char* nazwisko = "brak", int dzien = 1, int miesiac = 1, int rok = 1970);
 	virtual ~Pracownik();
-
+    int static siLiczPrac;
 	const char* Imie() const;
 	const char* Nazwisko() const;
-	const char* NrDomu() const;
 	const Data DataUrodzenia() const;
-	const char* Miasto() const;
-	const char* Ulica() const;
 
 	void Imie(const char*);
 	void Nazwisko(const char*);
 	void DataUrodzenia(int d, int m, int r);
-	void NrDomu(const char*);
-	void Ulica(const char*);
-	void Miasto(const char*);
 
 	void Wypisz() const;
 	void Wpisz();
@@ -32,7 +26,4 @@ private:
 	char *pszImie;
 	char *pszNazwisko;
 	Data dataUrodzenia;
-	char *ulica;
-	char *nrDomu;
-	char *miasto;
 };
